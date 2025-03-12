@@ -1,0 +1,17 @@
+Package: portfoliounisa
+Title: Portfolio Website for UNISA Students
+Version: 0.0.0.9000
+Authors@R: 
+    person("James Joseph", "Balamuta", email = "james.balamuta@gmail.com", 
+           role = c("aut", "cre", "cph"), 
+           comment = c(ORCID = "0000-0003-2826-8458"))
+Description: A portfolio website for UNISA students to showcase their work based on the Quarto framework using brand yml.
+URL: https://github.com/coatless-brand-yml/quarto-unisa, https://brand-yml.thecoatlessprofessor.com/quarto-unisa
+BugReports: https://github.com/coatless-brand-yml/quarto-unisa/issues
+License: MIT + file LICENSE
+Encoding: UTF-8
+Imports: 
+    shiny
+Depends: 
+    R (>= 4.3.0)
+LazyData: true

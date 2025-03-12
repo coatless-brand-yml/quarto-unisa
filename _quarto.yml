@@ -1,0 +1,24 @@
+project:
+  type: website
+  output-dir: _site
+  resources: 
+  - shinylive-sw.js
+
+website:  
+  repo-url: https://github.com/coatless-brand-yml/quarto-unisa # Change to your repository
+  repo-actions: [edit, issue]
+  title: "Portfolio Quarto Website"
+  navbar:
+    right:
+      - shinylive-app.qmd
+      - about.qmd
+      - icon: github
+        href: https://github.com/
+      - icon: twitter
+        href: https://twitter.com
+format:
+  html: 
+    theme: brand
+
+brand: _brand.yml
+

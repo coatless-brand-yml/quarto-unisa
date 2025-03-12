@@ -1,0 +1,53 @@
+---
+title: "Demo Shinylive App"
+format:
+  html:
+    embed-resources: false
+    resources: 
+      - shinylive-sw.js
+      - shinylive.js
+filters:
+  - shinylive
+---
+
+:::callout-important
+Please switch `{{shinylive-r}}` to `{shinylive-r}`. We've suppressed this example from running by using `{{}}`.
+:::
+
+```{{shinylive-r}}
+#| standalone: true
+
+ui <- ...
+
+server <- function(input, output, session) {
+  ...
+}
+
+shinyApp(ui, server)
+```
+
+Working example of a Shiny app that detects if it is running in shinylive:
+
+```{shinylive-r}
+#| standalone: true
+
+library(shiny)
+library(bslib)
+library(shinylive)
+
+is_shinylive <- function() { R.Version()$arch == "wasm32"}
+
+ui <- page_fillable(
+    class = "d-flex flex-column text-center align-items-center justify-content-center",
+    h1("Is this app running in shinylive?"),
+    textOutput("in_shinylive", container = \(...) p(..., class="fs-2 fw-bold"))
+)
+
+server <- function(input, output, session) {
+    output$in_shinylive <- renderText({
+        if (is_shinylive()) "Yes." else "No."
+    })
+}
+
+shinyApp(ui, server)
+```
