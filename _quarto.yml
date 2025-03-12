@@ -10,8 +10,10 @@ website:
   title: "Portfolio Quarto Website"
   navbar:
     right:
-      - shinylive-app.qmd
-      - about.qmd
+      - text: Shinylive Demo
+        href: shinylive-app.qmd
+      - text: Posts
+        href: blog.qmd
       - icon: github
         href: https://github.com/
       - icon: twitter
